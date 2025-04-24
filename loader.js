@@ -140,8 +140,9 @@
 
            			// If needed, decompress the file (this assumes the file is a compressed JavaScript file)
             			if (opts.gzip) {
-                			updateProgressBar("Extracting...", fileURL, -1);
-                			clientText = await tryDecompressDownload(clientText); // Decompress if necessary
+					// No decompression needed if not gzipped
+                			//updateProgressBar("Extracting...", fileURL, -1);
+                			//clientText = await tryDecompressDownload(clientText); // Decompress if necessary
             			}
 
             			// The client file is now available as `clientText`
@@ -194,8 +195,9 @@
 
             			// If needed, decompress the file (this assumes the file is a compressed JavaScript file)
             			if (opts.gzip) {
-                			updateProgressBar("Extracting...", fileURL, -1);
-                			clientText = await tryDecompressDownload(clientText); // Decompress if necessary
+					// No decompression needed if not gzipped
+                			//updateProgressBar("Extracting...", fileURL, -1);
+                			//clientText = await tryDecompressDownload(clientText); // Decompress if necessary
            			}
 
             			// The client file is now available as `clientText`
@@ -397,7 +399,7 @@
 		opts.cid = window.__eaglercraftLoaderClient.cid;
 		opts.path = window.__eaglercraftLoaderClient.path;
 		opts.dlSize = window.__eaglercraftLoaderClient.dlSize;
-		opts.gzip = window.__eaglercraftLoaderClient.gzip;
+		opts.gzip = false;
 		
 		initProgressScreen();
 		updateProgressScreen("Loading " + opts.name);
